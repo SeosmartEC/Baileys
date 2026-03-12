@@ -221,7 +221,7 @@ export const mediaMessageSHA256B64 = (message: WAMessageContent) => {
 	const media = Object.values(message)[0] as WAGenericMediaMessage
 	return media?.fileSha256 && Buffer.from(media.fileSha256).toString('base64')
 }
-
+// @ts-ignore
 export async function getAudioDuration(buffer: Buffer | string | Readable) {
 	const musicMetadata = await import('music-metadata')
 	let metadata: IAudioMetadata
