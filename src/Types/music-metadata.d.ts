@@ -23,4 +23,10 @@ declare module 'music-metadata' {
         filePath: string,
         options?: Record<string, unknown>
     ): Promise<IAudioMetadata>
+
+    export function parseStream(
+        stream: NodeJS.ReadableStream,
+        mimeType?: string,
+        options?: Record<string, unknown>
+    ): Promise<IAudioMetadata>
 }
