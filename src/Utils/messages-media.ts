@@ -4,7 +4,6 @@ import * as Crypto from 'crypto'
 import { once } from 'events'
 import { createReadStream, createWriteStream, promises as fs, WriteStream } from 'fs'
 import type { Agent } from 'https'
-// @ts-ignore
 import type { IAudioMetadata } from 'music-metadata'
 import { tmpdir } from 'os'
 import { join } from 'path'
@@ -221,7 +220,7 @@ export const mediaMessageSHA256B64 = (message: WAMessageContent) => {
 	const media = Object.values(message)[0] as WAGenericMediaMessage
 	return media?.fileSha256 && Buffer.from(media.fileSha256).toString('base64')
 }
-// @ts-ignore
+
 export async function getAudioDuration(buffer: Buffer | string | Readable) {
 	const musicMetadata = await import('music-metadata')
 	let metadata: IAudioMetadata
